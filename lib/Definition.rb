@@ -10,12 +10,18 @@ class Definition
     @word_id = word_id
     @id = id || @@total_rows += 1
   end
-end
 
-def self.all
-  @@definitions.values
-end
 
-def save
-    @@definitions[self.id] = Definition.new(self.name, self.word_id, self.id)
+  def self.all
+    @@definitions.values
   end
+
+  def save
+      @@definitions[self.id] = Definition.new(self.name, self.word_id, self.id)
+    end
+
+    def self.clear
+      @@definitions = {}
+    end
+
+end
