@@ -61,26 +61,26 @@ end
 
 # routes for Definition
 
-get('/homepage/:id/definition/:definition_id') do
+get('/homepage/:id/definitions/:definition_id') do
   @definition = Definition.find(params[:definition_id].to_i())
   erb(:definition)
 end
 
-post('/homepage/:id/definition') do
+post('/homepage/:id/definitions') do
   @word = Word.find(params[:id].to_i())
-  definition = Definition.new(params[:definition_name],@word.id,nil)
-  definition.save()
+  definitions = Definition.new(params[:definition_name],@word.id,nil)
+  definitions.save()
   erb(:word)
 end
 
-patch('/homepage/:id/definiton/:definition_id') do
+patch('/homepage/:id/definitons/:definition_id') do
  @word = Word.find(params[:id].to_i())
   definition = Definition.find(params[:definition_id].to_i())
   definition.update(params[:name], @word.id)
   erb(:word)
 end
 
-delete('/homepage/:id/definition/:definition_id') do
+delete('/homepage/:id/definitions/:definition_id') do
   definition = Definition.find(params[:definition_id].to_i())
   definition.delete()
   @word = Word.find(params[:id].to_i())
