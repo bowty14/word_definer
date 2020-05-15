@@ -78,7 +78,7 @@ describe '#Definition' do
         definition2 = Definition.new('a large spill',@word_id, nil)
         definition2.save()
         definition2.delete()
-        expect(Definition.all).to(eq(definition1))
+        expect(Definition.all).to(eq([definition1]))
       end
     end
 
