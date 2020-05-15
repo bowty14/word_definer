@@ -34,3 +34,8 @@ end
 get('/homepage/new') do
   erb(:new_word)
 end
+
+get('/homepage/:id') do
+  @word = Word.find(params[:id].to_i())
+  erb(:word)
+end
