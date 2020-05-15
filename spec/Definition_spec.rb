@@ -71,4 +71,15 @@ describe '#Definition' do
       end
     end
 
+    describe('#delete') do
+      it('deletes a definition by id') do
+        definition1 = Definition.new('body of water',@word_id, nil)
+        definition1.save()
+        definition2 = Definition.new('a large spill',@word_id, nil)
+        definition2.save()
+        definition2.delete()
+        expect(Definition.all).to(eq(definition1))
+      end
+    end
+
 end
