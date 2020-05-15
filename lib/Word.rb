@@ -27,6 +27,10 @@ class Word
     @@words[id]
   end
 
+  def delete
+    @@words.delete(self.id)
+  end
+
   def ==(word_to_compare)
     self.name() == word_to_compare.name()
   end
