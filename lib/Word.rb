@@ -27,6 +27,10 @@ class Word
     @@words[id]
   end
 
+  def update(name)
+    @name = name
+  end
+
   def delete
     @@words.delete(self.id)
   end
