@@ -7,7 +7,7 @@ also_reload('lib/**/*.rb')
 
 get('/') do
   @words = Word.all 
-  erb(:words)
+  erb(:homepage)
 end
 
 get('/homepage') do
@@ -60,7 +60,29 @@ delete('/homepage/:id') do
 end
 
 # routes for Definition
+
 get('/homepage/:id/definition/:definition_id') do
   @definition = Definition.find(params[:definition_id].to_i())
   erb(:definition)
+end
+
+post('/homepage/:id/definition') do
+  @word = Word.find(params[:id].to_i())
+  definition = Definition.new(params[:definition_name],@word.id,nil)
+  definition.save()
+  erb(:word)
+end
+
+patch('/homepage/:id/definiton/:definition_id') do
+ @word = Word.find(params[:id].to_i())
+  definition = Definition.find(params[:definition_id].to_i())
+  definition.update(params[:name], @word.id)
+  erb(:word)
+end
+
+delete('/homepage/:id/definition/:definition_id') do
+  definition = Definition.find(params[:definition_id].to_i())
+  definition.delete()
+  @word = Word.find(params[:id].to_i())
+  erb(:word)
 end
