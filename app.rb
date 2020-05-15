@@ -39,3 +39,8 @@ get('/homepage/:id') do
   @word = Word.find(params[:id].to_i())
   erb(:word)
 end
+
+get('/homepage/:id/edit') do
+  @word = Word.find(params[:id].to_i())
+  erb(:edit_word)
+end
