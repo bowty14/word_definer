@@ -22,7 +22,7 @@ end
 describe('#==') do
 it('overrides the == operator so two words with same attr are consider similar') do
   word = Word.new('coffee', nil)
-  word = Word.new('sugar', nil)
-  expect(word).to(eq(word1))
+  word = Word.new('coffee', nil)
+  expect(word).to(eq(word))
   end
 end
