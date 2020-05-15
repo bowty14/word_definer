@@ -44,4 +44,8 @@ class Word
     return array
   end
 
+  def self.sort()
+    Word.all.sort {|a,b| a.name <=> b.name}
+  end
+
 end

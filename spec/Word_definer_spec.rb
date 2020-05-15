@@ -86,7 +86,7 @@ describe'#Word' do
   end
 
   describe('.sort') do
-    it('will all users to sort words by name') do
+    it('will allow users to sort words by name') do
       word = Word.new('coffee', nil)
       word.save()
       word1 = Word.new('sugar', nil)
