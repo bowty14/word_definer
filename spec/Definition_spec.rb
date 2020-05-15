@@ -82,4 +82,15 @@ describe '#Definition' do
       end
     end
 
+    describe('.find_by_word') do
+      it('finds definitions by word') do
+        definition1 = Definition.new('body of water',@word_id, nil)
+        definition1.save()
+        definition2 = Definition.new('a large spill',@word2_id, nil)
+        definition2.save()
+        expect(Definition.find_by_word(@word2_id)).to(eq([definition2]))
+      end
+    end
+
+
 end
