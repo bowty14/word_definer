@@ -18,3 +18,10 @@ get('/homepage') do
   end
   erb(:homepage)
 end
+
+post('/homepage') do
+  name = params[:word_name]
+  word = Word.new(name, nil)
+  word.save
+  redirect to('/homepage')
+end
