@@ -1,10 +1,9 @@
-require ('Word_definer.rb')
+require ('Word.rb')
 require ('pry')
 require ('rspec')
 
-describe('') do
-  it('') do
-   blah = Word_definer.new('')
-   expect(blah()).to(eq('blah'))
+describe('.all') do
+  it('returns an empty array when there are no words') do
+   expect(Word.all).to(eq([]))
   end
 end
