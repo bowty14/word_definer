@@ -26,7 +26,11 @@ post('/homepage') do
   redirect to('/homepage')
 end
 
-get('/home/search') do
+get('/homepage/search') do
   @search_result = Word.search(params[:search])
   erb(:search_results)
+end
+
+get('/homepage/new') do
+  erb(:new_word)
 end
