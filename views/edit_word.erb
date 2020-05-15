@@ -1,0 +1,17 @@
+<h1>Edit <%= @word.name() %></h1>
+
+<form action="/homepage/<%= @word.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+
+  <label for="name">Change the spelling of your word</label>
+  <input id="name" name="name" type="text">
+
+  <button type="submit" class="btn">Update</button>
+</form>
+
+<p><a href="/homepage">Return to homepage</a></p>
+
+<form action="/homepage/<%= @word.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit" class="btn">Delete word</button>
+</form>
