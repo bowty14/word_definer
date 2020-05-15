@@ -3,6 +3,8 @@ require('sinatra/reloader')
 require('./lib/Word.rb')
 also_reload('lib/**/*.rb') 
 
+# routes for Word
+
 get('/') do
   @words = Word.all 
   erb(:words)
@@ -50,3 +52,11 @@ patch('/homepage/:id') do
   @word.update(params[:name])
   redirect to('/homepage')
 end
+
+delete('/homepage/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.delete()
+  redirect to('/homepage')
+end
+
+# routes for Definition

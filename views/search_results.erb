@@ -1,9 +1,9 @@
 <% if @search_result.any? %>
-  <% @search_result.each do |result| %>
+  <% @search_result.each do |result|  %>
     <ul>
-      <li><%= result.name%></li>
-    </ul>
+    <li><%= word.name%></li>
+    </ul> 
     <%end%>
   <% else %>
-    <p>There are words that match your search</p>
+    <p>There are no words that match your search</p>
   <%end%>
