@@ -75,4 +75,14 @@ describe'#Word' do
     end
   end
 
+  describe('.search') do
+    it('will allow a user to search for a word') do
+      word = Word.new('coffee', nil)
+      word.save()
+      word1 = Word.new('sugar', nil)
+      word1.save()
+      expect(Word.search(word.name)).to(eq([word]))
+    end
+  end
+
 end
