@@ -39,4 +39,9 @@ class Word
     self.name() == word_to_compare.name()
   end
 
+  def self.search(name)
+    array = @@words.values.select {|word| word.name == name}
+    return array
+  end
+
 end
