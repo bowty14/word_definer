@@ -30,5 +30,5 @@
 
 
 <% @words.each do |word|%>
-  <li><a href="/homepage/<%= word.name%>"></a></li>
+ <li><a href="/homepage/<%= word.id %>"><%= word.name %></a></li>
 <% end %>
