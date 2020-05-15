@@ -27,7 +27,7 @@ describe'#Word' do
   
   describe('.clear') do
     it('clears all words') do
-      word = Word.new('coffee', nil)
+    word = Word.new('coffee', nil)
     word.save()
     word1 = Word.new('sugar', nil)
     word1.save()
@@ -45,5 +45,14 @@ describe'#Word' do
     end
   end
 
+  describe('.find') do
+    it('finds a word by id') do
+    word = Word.new('coffee', nil)
+    word.save()
+    word1 = Word.new('sugar', nil)
+    word1.save()
+    expect(Word.find(word.id)).to(eq(word))
+    end
+  end
 
 end
