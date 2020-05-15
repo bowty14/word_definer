@@ -44,3 +44,9 @@ get('/homepage/:id/edit') do
   @word = Word.find(params[:id].to_i())
   erb(:edit_word)
 end
+
+patch('/homepage/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.update(params[:name])
+  redirect to('/homepage')
+end
