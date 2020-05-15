@@ -96,7 +96,7 @@ describe '#Definition' do
 
     describe('#word') do
       it('finds the word a definition belongs to') do
-        definition = Definition.new('a body of water, @word_id, nil')
+        definition = Definition.new('a body of water', @word.id, nil)
         definition.save()
         expect(definition.word()).to(eq(@word))
       end
