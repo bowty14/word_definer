@@ -27,12 +27,12 @@ describe'#Word' do
   
   describe('.clear') do
     it('clears all words') do
-    word = Word.new('coffee', nil)
-    word.save()
-    word1 = Word.new('sugar', nil)
-    word1.save()
-    Word.clear()
-    expect(Word.all).to(eq([]))
+      word = Word.new('coffee', nil)
+      word.save()
+      word1 = Word.new('sugar', nil)
+      word1.save()
+      Word.clear()
+      expect(Word.all).to(eq([]))
     end
   end
 
@@ -47,22 +47,31 @@ describe'#Word' do
 
   describe('.find') do
     it('finds a word by id') do
-    word = Word.new('coffee', nil)
-    word.save()
-    word1 = Word.new('sugar', nil)
-    word1.save()
-    expect(Word.find(word.id)).to(eq(word))
+      word = Word.new('coffee', nil)
+      word.save()
+      word1 = Word.new('sugar', nil)
+      word1.save()
+      expect(Word.find(word.id)).to(eq(word))
+    end
+  end
+
+  describe('#update') do
+    it('updates a word by id') do
+      word = Word.new('coffee', nil)
+      word.save()
+      word.update("Starbucks")
+      expect(word.name).to(eq("Starbucks"))
     end
   end
 
   describe('#delete') do
     it('deletes a word by id') do
-    word = Word.new('coffee', nil)
-    word.save()
-    word1 = Word.new('sugar', nil)
-    word1.save()
-    word.delete()
-    expect(Word.all).to(eq([word1]))
+      word = Word.new('coffee', nil)
+      word.save()
+      word1 = Word.new('sugar', nil)
+      word1.save()
+      word.delete()
+      expect(Word.all).to(eq([word1]))
     end
   end
 
