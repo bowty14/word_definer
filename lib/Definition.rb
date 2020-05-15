@@ -2,7 +2,7 @@ class Definition
   attr_reader :id
   attr_accessor :name, :word_id
 
-  @@definitions
+  @@definitions = {}
   @@total_rows = 0
 
   def initialize(name, word_id, id)
@@ -15,3 +15,7 @@ end
 def self.all
   @@definitions.values
 end
+
+def save
+    @@definitions[self.id] = Definition.new(self.name, self.word_id, self.id)
+  end
