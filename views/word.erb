@@ -1,5 +1,25 @@
 <h3>Word spelling: <%= @word.name%><h3>
 
+<h4>Word definitions</h4>
+  <% if @word.definition%>
+    <ul>
+      <% @word.definition.each do |definition|%>
+      <li><a href="/homepage/<%= @word.id%>/definition/<%= definition.id%>"><%= definition.name%></a></li>
+      <% end %>
+    </ul>
+    <% else %>
+      <p>There are no definitions for ths word yet.</p>
+      <% end %>
+
+      <h4>Add a definition</h4>
+      <form action ="/homepage/<%= @word.id %>/definition" method="post">
+        <div class = "form-group">
+          <label for= "word_definition">Definition of word</label>
+          <input id="word_definition" name="word_definition" class="form-control" type="text">
+        </div>
+        <button type="submit" class="btn">Add definition</button>
+      </form>
+
 <%# Word edit link%>
 <p><a href="/homepage/<%= @word.id %>/edit">Edit word</a></p>
 <p><a href="/homepage">Return to homepage</a></p>

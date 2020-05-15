@@ -60,3 +60,7 @@ delete('/homepage/:id') do
 end
 
 # routes for Definition
+get('/homepage/:id/definition/:definition_id') do
+  @definition = Definition.find(params[:definition_id].to_i())
+  erb(:definition)
+end
