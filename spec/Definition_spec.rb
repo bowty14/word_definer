@@ -65,8 +65,9 @@ describe '#Definition' do
       it('updates a definition by id') do
         definition1 = Definition.new('body of water',@word_id, nil)
         definition1.save()
+       
         definition1.update('a large spill',@word_id, nil)
-        expect(Definition.name).to(eq('a large spill'))
+        expect(definition1.name).to(eq('a large spill'))
       end
     end
 
