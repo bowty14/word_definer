@@ -85,4 +85,16 @@ describe'#Word' do
     end
   end
 
+  describe('.sort') do
+    it('will all users to sort words by name') do
+      word = Word.new('coffee', nil)
+      word.save()
+      word1 = Word.new('sugar', nil)
+      word1.save()
+      word2 = Word.new('egg', nil)
+      word2.save()
+      expect(Word.sort()).to(eq([word, word2, word1]))
+    end
+  end
+
 end
