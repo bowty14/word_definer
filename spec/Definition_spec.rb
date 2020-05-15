@@ -51,4 +51,14 @@ describe '#Definition' do
        end
      end
 
+     describe('.find') do
+      it('finds a definition by id') do
+        define1 = Definition.new('body of water',@word_id, nil)
+        define1.save()
+        define2 = Definition.new('a large spill',@word_id, nil)
+        define2.save()
+        expect(Definition.find(definition1.id)).to(eq(definition1))
+      end
+    end
+
 end
