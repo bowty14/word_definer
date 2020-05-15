@@ -14,6 +14,11 @@ class Word
     @@words.values()
   end
 
+  def self.clear
+    @@words = {}
+    @@total_rows = 0
+  end
+
   def save
     @@words[self.id] = Word.new(self.name, self.id)
   end
@@ -21,5 +26,5 @@ class Word
   def ==(word_to_compare)
     self.name() == word_to_compare.name()
   end
-  
+
 end
