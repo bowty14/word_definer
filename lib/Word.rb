@@ -1,4 +1,6 @@
 require ('pry')
+require('./lib/definition.rb')
+
 
 class Word
   attr_reader :name, :id
@@ -46,6 +48,10 @@ class Word
 
   def self.sort()
     Word.all.sort {|a,b| a.name <=> b.name}
+  end
+
+  def definitions
+    Definition.find_by_word(self.id)
   end
 
 end

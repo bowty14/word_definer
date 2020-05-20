@@ -1,5 +1,5 @@
 <h2>Word <%= @definition.word.name%></h2>
-<h3>Word <%= @definition.name%></h3>
+<h3>Definition <%= @definition.name%></h3>
 
 <form action="/homepage/<%= @definition.word.id %>/definition/<%= @definition.id %>" method="post">
   <input name="_method" type="hidden" value="patch">
@@ -13,7 +13,7 @@
 <form action="/homepage/<%= @definition.word.id %>/definition/<%=@definition.id %>" method="post">
   <input name="_method" type="hidden" value="delete">
 
-  <button type="submit">Delete song</button>
+  <button type="submit">Delete definition</button>
 </form>
 
 

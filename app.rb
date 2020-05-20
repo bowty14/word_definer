@@ -86,3 +86,10 @@ delete('/homepage/:id/definitions/:definition_id') do
   @word = Word.find(params[:id].to_i())
   erb(:word)
 end
+
+post('/homepage/:id/definitions/:definition_id') do
+  @word = Word.find(params[:id].to_i())
+  definitions = Definition.new(params[:definition_name],@word.id, nil)
+  definitions.save()
+  erb(:word)
+end
