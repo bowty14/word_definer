@@ -1,6 +1,6 @@
 require('sinatra') 
 require('sinatra/reloader') 
-require('./lib/Word.rb')
+require('./lib/word.rb')
 also_reload('lib/**/*.rb') 
 
 # routes for Word

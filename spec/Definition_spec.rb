@@ -1,6 +1,6 @@
 require 'rspec'
 require 'Word.rb'
-require 'Definition.rb'
+require 'definition.rb'
 require 'pry'
 
 describe '#Definition' do
