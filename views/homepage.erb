@@ -11,7 +11,7 @@
 </form>
   <ul>
     <% @words.each do |word| %>
-      <li><%= word.name%></li>
+      <li><a href="/homepage/<%= word.id %>"><%= word.name %></a></li>
     <% end %>
   </ul>
 <% else %>
@@ -27,8 +27,3 @@
   </div>
   <button type="submit" class="btn">Go!</button>
 </form>
-
-
-<% @words.each do |word|%>
- <li><a href="/homepage/<%= word.id %>"><%= word.name %></a></li>
-<% end %>
