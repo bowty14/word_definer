@@ -33,7 +33,7 @@ _To Download Manually:_
 * Welcome to the Knows more word dictionary!
 
 _To view live:_
-* [Click here!](https://frozen-peak-24421.herokuapp.com/) disclaimer, it's not working at the moment.
+* [Click here!](https://frozen-peak-24421.herokuapp.com/)
 
 ## Known Bugs
 No known bugs at this time.
