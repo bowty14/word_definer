@@ -1,4 +1,4 @@
-require ('Word.rb')
+require ('word.rb')
 require ('pry')
 require ('rspec')
 
