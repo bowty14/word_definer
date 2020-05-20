@@ -1,9 +1,11 @@
 <% if @search_result.any? %>
   <% @search_result.each do |result|  %>
     <ul>
-    <li><%= word.name%></li>
+    <li><a href="/homepage/<%= result.id %>"><%= result.name %></li>
     </ul> 
     <%end%>
   <% else %>
     <p>There are no words that match your search</p>
   <%end%>
+
+  <p><a href="/homepage">Return to homepage</a></p>

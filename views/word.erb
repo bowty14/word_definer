@@ -1,6 +1,6 @@
-<h3>Word spelling: <%= @word.name%><h3>
+<h3>Word spelling: <%= @word.name %><h3>
 
-<h4>Word definitions</h4>
+<h4>Word definition(s)</h4>
   <% if @word.definitions %>
     <ul>
       <% @word.definitions.each do |definition| %>
@@ -8,16 +8,16 @@
       <% end %>
     </ul>
     <% else %>
-      <p>There are no song listed for this album yet.</p>
+      <p>There are no definitions listed for this word yet.</p>
     <% end %>
 
 <h4>Add a definition:</h4>
-<form action ="/homepage/<%= @word.id %>/definitions" method="post">
+<form action ="/homepage/<%= @word.id %>/definitions/definitions_id" method="post">
   <div class="form-group">
     <label for="definiton_name">Definition of word</label>
     <input id="definition_name" name="definition_name" class="form-control" type="text">
   </div>
-  <button type="submit" class="btn">Add song</button>
+  <button type="submit" class="btn">Add definition</button>
   </form>
 
 <%# Word edit link%>
